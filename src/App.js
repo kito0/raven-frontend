@@ -1,51 +1,65 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
-import NavBar from "./components/NavBar";
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
-import home from "./pages/home";
-import login from "./pages/login";
-import signup from "./pages/signup";
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
-const theme = createMuiTheme({
-	palette: {
-		primary: {
-			light: "#212121",
-			main: "#212121",
-			dark: "#212121",
-			contrastText: "#fff",
-		},
-		secondary: {
-			light: "#212121",
-			main: "#212121",
-			dark: "#212121",
-			contrastText: "#000",
-		},
-	},
-	typography: {
-		useNextVariants: true,
-	},
-});
+import './App.css';
+import NavBar from './components/NavBar';
+import themeFile from './util/theme';
+import AuthRoute from './util/AuthRoute';
+import home from './pages/home';
+import login from './pages/login';
+import signup from './pages/signup';
+
+const theme = createMuiTheme(themeFile);
+
+let authenticated;
+const token = localStorage.FBIdToken;
+if (token) {
+	const decodedToken = jwtDecode(token);
+	if (decodedToken.exp * 1000 < Date.now()) {
+		window.location.href = '/login';
+		authenticated = true;
+	} else {
+		authenticated = true;
+	}
+}
+
+axios.defaults.baseURL =
+	'https://us-central1-raven-social.cloudfunctions.net/api';
 
 class App extends Component {
 	render() {
 		return (
 			<MuiThemeProvider theme={theme}>
-				<div className="App">
+				<Provider store={store}>
 					<Router>
 						<NavBar />
 						<div className="container">
 							<Switch>
 								<Route exact path="/" component={home} />
-								<Route exact path="/login" component={login} />
-								<Route exact path="/signup" component={signup} />
+								<AuthRoute
+									exact
+									path="/login"
+									component={login}
+									authenticated={authenticated}
+								/>
+								<AuthRoute
+									exact
+									path="/signup"
+									component={signup}
+									authenticated={authenticated}
+								/>
 							</Switch>
 						</div>
 					</Router>
-				</div>
+				</Provider>
 			</MuiThemeProvider>
 		);
 	}
