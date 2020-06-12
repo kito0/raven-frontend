@@ -9,21 +9,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-const styles = {
-	card: {
-		position: 'relative',
-		display: 'flex',
-		marginBottom: 20,
-		background: '#6c736f',
-	},
-	image: {
-		minWidth: 150,
-	},
-	content: {
-		padding: 25,
-		objectFit: 'cover',
-	},
-};
+const styles = (theme) => ({
+	...theme.screamStyle,
+});
 
 class Scream extends Component {
 	render() {
@@ -48,12 +36,7 @@ class Scream extends Component {
 					className={classes.image}
 				/>
 				<CardContent className={classes.content}>
-					<Typography
-						variant="h5"
-						component={Link}
-						to={`/users/${userHandle}`}
-						color="primary"
-					>
+					<Typography variant="h5" component={Link} to={`/users/${userHandle}`}>
 						{userHandle}
 					</Typography>
 					<br />

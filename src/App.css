@@ -3,7 +3,8 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
-	background-color: #5f6662;
+	background-color: #404243;
+	color: #959b9b;
 }
 .container {
 	margin: 80px auto 0 auto;
@@ -14,4 +15,5 @@ body {
 }
 a {
 	text-decoration: none;
+	color: #959b9b;
 }
