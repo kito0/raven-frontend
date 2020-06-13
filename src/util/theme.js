@@ -19,6 +19,18 @@ export default {
 	typography: {
 		useNextVariants: true,
 	},
+	paper: {
+		padding: 20,
+	},
+	invisibleSeparator: {
+		border: 'none',
+		margin: 4,
+	},
+	visibleSeparator: {
+		width: '100%',
+		borderBottom: '1px solid rgba(0,0,0,0.1)',
+		marginBottom: 20,
+	},
 	formStyle: {
 		form: {
 			textAlign: 'center',
@@ -75,6 +87,54 @@ export default {
 		content: {
 			padding: 25,
 			objectFit: 'cover',
+		},
+	},
+	profile: {
+		paper: {
+			padding: 20,
+			background: '#343636',
+		},
+		imageWrapper: {
+			textAlign: 'center',
+			position: 'relative',
+			'& button': {
+				position: 'absolute',
+				top: '80%',
+				left: '70%',
+			},
+			background: '#343636',
+		},
+		profileImage: {
+			margin: '20px',
+			width: 200,
+			height: 200,
+			borderRadius: '50%',
+			background: '#343636',
+		},
+		profileDetails: {
+			background: '#343636',
+			textAlign: 'center',
+			'& span, svg': {
+				verticalAlign: 'middle',
+			},
+			'& a': {
+				color: '#959b9b',
+			},
+		},
+		svgButton: {
+			background: '#343636',
+			'&:hover': {
+				cursor: 'pointer',
+			},
+		},
+		noProfile: {
+			padding: 20,
+		},
+		buttons: {
+			textAlign: 'center',
+			'& a': {
+				margin: '10px 20px 10px 20px',
+			},
 		},
 	},
 };
