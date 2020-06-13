@@ -17,3 +17,16 @@ a {
 	text-decoration: none;
 	color: #959b9b;
 }
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgb(10, 10, 10);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #1f1f1f;
+	border-radius: 10px;
+}

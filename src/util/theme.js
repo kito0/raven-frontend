@@ -1,7 +1,4 @@
 export default {
-	a: {
-		textDecoration: 'none',
-	},
 	palette: {
 		primary: {
 			light: '#1f1f1f',
