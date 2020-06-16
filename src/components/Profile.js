@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
+import EditDetails from './EditDetails';
 
 import { connect } from 'react-redux';
 import { logoutUser, uploadImage } from '../redux/actions/userActions';
@@ -13,11 +14,13 @@ import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import EditIcon from '@material-ui/icons/Edit';
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 
 const styles = (theme) => ({
 	...theme.profile,
@@ -63,32 +66,38 @@ class Profile extends Component {
 								hidden="hidden"
 								onChange={this.handleImageChange}
 							/>
-							<IconButton onClick={this.handleEditPicture} className="button">
-								<EditIcon color="primary" />
-							</IconButton>
+							<Tooltip title="Upload Picture" placement="top">
+								<IconButton onClick={this.handleEditPicture} className="button">
+									<EditIcon color="secondary" />
+								</IconButton>
+							</Tooltip>
 						</div>
 						<p />
 						<div className={classes.profileDetails}>
-							<MuiLink
+							<Typography variant="h5" component={Link} to={`/users/${handle}`}>
+								@{handle}
+							</Typography>
+							{/* <MuiLink
 								component={Link}
 								to={`/users/${handle}`}
-								color="primary"
+								color="secondary"
 								variant="h5"
 							>
 								@{handle}
-							</MuiLink>
+							</MuiLink> */}
 							<p />
 							{bio && <Typography variant="body2">{bio}</Typography>}
 							<p />
 							{location && (
 								<Fragment>
-									<LocationOn color="primary" />
+									<LocationOn color="secondary" />
 									<span>{location}</span>
 								</Fragment>
 							)}
+							<p />
 							{website && (
 								<Fragment>
-									<LinkIcon color="primary" />
+									<LinkIcon color="secondary" />
 									<a href={website} target="_blank" rel="noopener noreferrer">
 										{' '}
 										{website}
@@ -96,12 +105,18 @@ class Profile extends Component {
 									<p />
 								</Fragment>
 							)}
-							<CalendarToday color="primary" />{' '}
+							<CalendarToday color="secondary" />{' '}
 							<span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
 						</div>
+						<Tooltip title="Logout" placement="top">
+							<IconButton onClick={this.handleLogout}>
+								<KeyboardReturn color="secondary" />
+							</IconButton>
+						</Tooltip>
 						{/* <MyButton tip="Logout" onClick={this.handleLogout}>
 							<KeyboardReturn color="primary" />
 						</MyButton> */}
+						<EditDetails />
 					</div>
 				</Paper>
 			) : (

@@ -8,7 +8,7 @@ export default {
 		},
 		secondary: {
 			light: '#959b9b',
-			main: '#5eada8',
+			main: '#5e3333',
 			dark: '#959b9b',
 			contrastText: '#959b9b',
 		},
@@ -37,9 +37,6 @@ export default {
 		},
 		pageTitle: {
 			margin: '10px auto 10px auto',
-		},
-		textField: {
-			margin: '5px auto 5px auto',
 		},
 		button: {
 			marginTop: 20,
@@ -75,7 +72,7 @@ export default {
 			position: 'relative',
 			display: 'flex',
 			marginBottom: 20,
-			background: '#343636',
+			background: '#2a2b2b',
 			color: '#959b9b',
 		},
 		image: {
@@ -89,7 +86,8 @@ export default {
 	profile: {
 		paper: {
 			padding: 20,
-			background: '#343636',
+			background: '#2a2b2b',
+			color: '#959b9b',
 		},
 		imageWrapper: {
 			textAlign: 'center',
@@ -99,17 +97,18 @@ export default {
 				top: '80%',
 				left: '70%',
 			},
-			background: '#343636',
+			background: '#2a2b2b',
 		},
 		profileImage: {
 			margin: '20px',
 			width: 200,
 			height: 200,
 			borderRadius: '50%',
-			background: '#343636',
+			background: '#2a2b2b',
 		},
 		profileDetails: {
-			background: '#343636',
+			color: '#959b9b',
+			background: '#2a2b2b',
 			textAlign: 'center',
 			'& span, svg': {
 				verticalAlign: 'middle',
@@ -119,7 +118,7 @@ export default {
 			},
 		},
 		svgButton: {
-			background: '#343636',
+			background: '#2a2b2b',
 			'&:hover': {
 				cursor: 'pointer',
 			},
@@ -132,6 +131,11 @@ export default {
 			'& a': {
 				margin: '10px 20px 10px 20px',
 			},
+		},
+	},
+	editStyle: {
+		editDetails: {
+			background: '#2a2b2b',
 		},
 	},
 };
