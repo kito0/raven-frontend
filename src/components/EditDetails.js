@@ -1,16 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ButtonTemplate from '../util/ButtonTemplate';
 
 import withStyles from '@material-ui/core/styles/withStyles';
-import Tooltip from '@material-ui/core/Tooltip';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import IconButton from '@material-ui/core/IconButton';
 
 import EditIcon from '@material-ui/icons/Edit';
 
@@ -18,9 +17,14 @@ import { connect } from 'react-redux';
 import { editUserDetails } from '../redux/actions/userActions';
 
 const styles = (theme) => ({
-	...theme.editStyle,
 	button: {
 		float: 'right',
+	},
+	root: {
+		background: 'transparent',
+	},
+	input: {
+		color: '#959b9b',
 	},
 });
 
@@ -72,19 +76,29 @@ class EditDetails extends Component {
 		const { classes } = this.props;
 		return (
 			<Fragment>
-				<Tooltip title="Edit details" placement="top">
-					<IconButton onClick={this.handleOpen} className={classes.button}>
-						<EditIcon color="secondary" />
-					</IconButton>
-				</Tooltip>
+				<ButtonTemplate
+					tip="Edit details"
+					onClick={this.handleOpen}
+					btnClassName={classes.button}
+				>
+					<EditIcon color="secondary" />
+				</ButtonTemplate>
 				<Dialog
 					open={this.state.open}
 					onClose={this.handleClose}
 					fullWidth
 					maxWidth="sm"
 					className={classes.EditDetails}
+					PaperProps={{
+						style: {
+							backgroundColor: 'rgba(0,0,0, 0.1)',
+							boxShadow: '5px 10px 18px',
+						},
+					}}
 				>
-					<DialogTitle>Edit your details</DialogTitle>
+					<DialogTitle style={{ color: '#b0b0b0' }}>
+						Edit your details
+					</DialogTitle>
 					<DialogContent>
 						<form>
 							<TextField
@@ -94,10 +108,17 @@ class EditDetails extends Component {
 								multiline
 								rows="3"
 								placeholder="a short bio about yourself"
-								className={classes.textField}
 								value={this.state.bio}
 								onChange={this.handleChange}
 								fullWidth
+								defaultValue="color"
+								className={classes.root}
+								InputProps={{
+									className: classes.input,
+								}}
+								InputLabelProps={{
+									className: classes.input,
+								}}
 							/>
 							<TextField
 								name="website"
@@ -108,6 +129,14 @@ class EditDetails extends Component {
 								value={this.state.website}
 								onChange={this.handleChange}
 								fullWidth
+								defaultValue="color"
+								className={classes.root}
+								InputProps={{
+									className: classes.input,
+								}}
+								InputLabelProps={{
+									className: classes.input,
+								}}
 							/>
 							<TextField
 								name="location"
@@ -118,14 +147,22 @@ class EditDetails extends Component {
 								value={this.state.location}
 								onChange={this.handleChange}
 								fullWidth
+								defaultValue="color"
+								className={classes.root}
+								InputProps={{
+									className: classes.input,
+								}}
+								InputLabelProps={{
+									className: classes.input,
+								}}
 							/>
 						</form>
 					</DialogContent>
 					<DialogActions>
-						<Button onClick={this.handleClose} color="primary">
+						<Button onClick={this.handleClose} color="secondary">
 							Cancel
 						</Button>
-						<Button onClick={this.handleSubmit} color="primary">
+						<Button onClick={this.handleSubmit} color="secondary">
 							Save
 						</Button>
 					</DialogActions>

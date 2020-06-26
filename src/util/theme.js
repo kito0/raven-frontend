@@ -2,7 +2,7 @@ export default {
 	palette: {
 		primary: {
 			light: '#1f1f1f',
-			main: '#1f1f1f',
+			main: 'rgb(15, 15, 15)',
 			dark: '#1f1f1f',
 			contrastText: '#959b9b',
 		},
@@ -72,7 +72,7 @@ export default {
 			position: 'relative',
 			display: 'flex',
 			marginBottom: 20,
-			background: '#2a2b2b',
+			background: 'rgba(0,0,0, 0.3)',
 			color: '#959b9b',
 		},
 		image: {
@@ -86,7 +86,7 @@ export default {
 	profile: {
 		paper: {
 			padding: 20,
-			background: '#2a2b2b',
+			background: 'rgba(0,0,0, 0.3)',
 			color: '#959b9b',
 		},
 		imageWrapper: {
@@ -97,18 +97,16 @@ export default {
 				top: '80%',
 				left: '70%',
 			},
-			background: '#2a2b2b',
 		},
 		profileImage: {
 			margin: '20px',
 			width: 200,
 			height: 200,
 			borderRadius: '50%',
-			background: '#2a2b2b',
+			background: 'rgba(0,0,0, 0.5)',
 		},
 		profileDetails: {
 			color: '#959b9b',
-			background: '#2a2b2b',
 			textAlign: 'center',
 			'& span, svg': {
 				verticalAlign: 'middle',
@@ -118,7 +116,6 @@ export default {
 			},
 		},
 		svgButton: {
-			background: '#2a2b2b',
 			'&:hover': {
 				cursor: 'pointer',
 			},
@@ -131,11 +128,6 @@ export default {
 			'& a': {
 				margin: '10px 20px 10px 20px',
 			},
-		},
-	},
-	editStyle: {
-		editDetails: {
-			background: '#2a2b2b',
 		},
 	},
 };

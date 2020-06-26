@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails';
+import ButtonTemplate from '../util/ButtonTemplate';
 
 import { connect } from 'react-redux';
 import { logoutUser, uploadImage } from '../redux/actions/userActions';
@@ -13,8 +14,6 @@ import Paper from '@material-ui/core/Paper';
 import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
 
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
@@ -66,11 +65,13 @@ class Profile extends Component {
 								hidden="hidden"
 								onChange={this.handleImageChange}
 							/>
-							<Tooltip title="Upload Picture" placement="top">
-								<IconButton onClick={this.handleEditPicture} className="button">
-									<EditIcon color="secondary" />
-								</IconButton>
-							</Tooltip>
+							<ButtonTemplate
+								tip="Edit profile picture"
+								onClick={this.handleEditPicture}
+								btnClassName="button"
+							>
+								<EditIcon color="secondary" />
+							</ButtonTemplate>
 						</div>
 						<p />
 						<div className={classes.profileDetails}>
@@ -108,14 +109,9 @@ class Profile extends Component {
 							<CalendarToday color="secondary" />{' '}
 							<span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
 						</div>
-						<Tooltip title="Logout" placement="top">
-							<IconButton onClick={this.handleLogout}>
-								<KeyboardReturn color="secondary" />
-							</IconButton>
-						</Tooltip>
-						{/* <MyButton tip="Logout" onClick={this.handleLogout}>
-							<KeyboardReturn color="primary" />
-						</MyButton> */}
+						<ButtonTemplate tip="Logout" onClick={this.handleLogout}>
+							<KeyboardReturn color="secondary" />
+						</ButtonTemplate>
 						<EditDetails />
 					</div>
 				</Paper>

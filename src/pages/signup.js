@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import loginIcon from '../images/raven-login.png';
+import loginIcon from '../images/raven-login.svg';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
@@ -15,6 +15,21 @@ import { signupUser } from '../redux/actions/userActions';
 
 const styles = (theme) => ({
 	...theme.formStyle,
+	root: {
+		background: 'transparent',
+	},
+	input: {
+		color: '#959b9b',
+	},
+	inputLabel: {
+		color: '#878c8c',
+	},
+	notchedOutline: {},
+	focused: {
+		'& $notchedOutline': {
+			borderColor: 'white',
+		},
+	},
 });
 
 class signup extends Component {
@@ -67,6 +82,7 @@ class signup extends Component {
 					</Typography>
 					<form noValidate onSubmit={this.handleSubmit}>
 						<TextField
+							color="secondary"
 							id="email"
 							name="email"
 							type="email"
@@ -81,7 +97,6 @@ class signup extends Component {
 								classes: {
 									root: classes.root,
 									error: classes.error,
-									underline: classes.underline,
 								},
 							}}
 							FormHelperTextProps={{
@@ -97,8 +112,17 @@ class signup extends Component {
 									error: classes.error,
 								},
 							}}
+							defaultValue="color"
+							className={classes.root}
+							InputProps={{
+								className: classes.input,
+							}}
+							InputLabelProps={{
+								className: classes.input,
+							}}
 						/>
 						<TextField
+							color="secondary"
 							id="password"
 							name="password"
 							type="password"
@@ -113,7 +137,6 @@ class signup extends Component {
 								classes: {
 									root: classes.root,
 									error: classes.error,
-									underline: classes.underline,
 								},
 							}}
 							FormHelperTextProps={{
@@ -129,8 +152,17 @@ class signup extends Component {
 									error: classes.error,
 								},
 							}}
+							defaultValue="color"
+							className={classes.root}
+							InputProps={{
+								className: classes.input,
+							}}
+							InputLabelProps={{
+								className: classes.input,
+							}}
 						/>
 						<TextField
+							color="secondary"
 							id="confirmPassword"
 							name="confirmPassword"
 							type="password"
@@ -145,7 +177,6 @@ class signup extends Component {
 								classes: {
 									root: classes.root,
 									error: classes.error,
-									underline: classes.underline,
 								},
 							}}
 							FormHelperTextProps={{
@@ -161,8 +192,17 @@ class signup extends Component {
 									error: classes.error,
 								},
 							}}
+							defaultValue="color"
+							className={classes.root}
+							InputProps={{
+								className: classes.input,
+							}}
+							InputLabelProps={{
+								className: classes.input,
+							}}
 						/>
 						<TextField
+							color="secondary"
 							id="handle"
 							name="handle"
 							type="text"
@@ -177,7 +217,6 @@ class signup extends Component {
 								classes: {
 									root: classes.root,
 									error: classes.error,
-									underline: classes.underline,
 								},
 							}}
 							FormHelperTextProps={{
@@ -192,6 +231,14 @@ class signup extends Component {
 									asterisk: classes.asterisk,
 									error: classes.error,
 								},
+							}}
+							defaultValue="color"
+							className={classes.root}
+							InputProps={{
+								className: classes.input,
+							}}
+							InputLabelProps={{
+								className: classes.input,
 							}}
 						/>
 						{errors.general && (
