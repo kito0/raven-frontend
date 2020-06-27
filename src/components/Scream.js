@@ -65,7 +65,7 @@ class Scream extends Component {
 				</Link>
 			</ButtonTemplate>
 		) : this.likedScream() ? (
-			<ButtonTemplate tip="Undo Like" onClick={this.unlikeScream}>
+			<ButtonTemplate tip="Unlike" onClick={this.unlikeScream}>
 				<FavoriteIcon color="secondary" />
 			</ButtonTemplate>
 		) : (
@@ -124,4 +124,7 @@ const mapActionsToProps = {
 	unlikeScream,
 };
 
-export default connect(mapStateToProps)(withStyles(styles)(Scream));
+export default connect(
+	mapStateToProps,
+	mapActionsToProps
+)(withStyles(styles)(Scream));

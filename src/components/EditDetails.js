@@ -1,16 +1,14 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import withStyles from '@material-ui/core/styles/withStyles';
 import ButtonTemplate from '../util/ButtonTemplate';
 
-import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
 import EditIcon from '@material-ui/icons/Edit';
 
 import { connect } from 'react-redux';

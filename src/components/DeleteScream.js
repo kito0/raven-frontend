@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import withStyles from '@material-ui/core/styles/withStyles';
 import ButtonTemplate from '../util/ButtonTemplate';
 
-import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -80,7 +79,7 @@ class DeleteScream extends Component {
 DeleteScream.propTypes = {
 	deleteScream: PropTypes.func.isRequired,
 	classes: PropTypes.object.isRequired,
-	screamId: PropTypes.object.isRequired,
+	screamId: PropTypes.string.isRequired,
 };
 
 export default connect(null, { deleteScream })(
