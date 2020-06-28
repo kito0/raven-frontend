@@ -98,9 +98,7 @@ class PostScream extends Component {
 					>
 						<CloseIcon color="secondary" />
 					</ButtonTemplate>
-					<DialogTitle style={{ color: '#b0b0b0' }}>
-						Post a new scream
-					</DialogTitle>
+					<DialogTitle style={{ color: '#b0b0b0' }}>Create Post</DialogTitle>
 					<DialogContent>
 						<form onSubmit={this.handleSubmit}>
 							<TextField

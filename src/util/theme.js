@@ -100,6 +100,7 @@ export default {
 		},
 		profileImage: {
 			margin: '20px',
+			objectFit: 'cover',
 			width: 200,
 			height: 200,
 			borderRadius: '50%',
