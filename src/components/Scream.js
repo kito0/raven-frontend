@@ -20,7 +20,20 @@ import { connect } from 'react-redux';
 import { likeScream, unlikeScream } from '../redux/actions/dataActions';
 
 const styles = (theme) => ({
-	...theme.screamStyle,
+	card: {
+		position: 'relative',
+		display: 'flex',
+		marginBottom: 20,
+		background: 'rgba(0,0,0, 0.3)',
+		color: '#959b9b',
+	},
+	image: {
+		minWidth: 150,
+	},
+	content: {
+		padding: 25,
+		objectFit: 'cover',
+	},
 });
 
 class Scream extends Component {
@@ -77,11 +90,19 @@ class Scream extends Component {
 			authenticated && userHandle === handle ? (
 				<DeleteScream screamId={screamId} />
 			) : null;
+		const likeCountData =
+			likeCount === 1 ? <span>1 Like</span> : <span>{likeCount} Likes</span>;
+		const commentCountData =
+			commentCount === 1 ? (
+				<span>1 Comment</span>
+			) : (
+				<span>{commentCount} Comments</span>
+			);
 		return (
 			<Card className={classes.card}>
 				<CardMedia
 					image={userImage}
-					title="profile image"
+					title="Profile image"
 					className={classes.image}
 				/>
 				<CardContent className={classes.content}>
@@ -96,10 +117,11 @@ class Scream extends Component {
 					<br />
 					<Typography variant="body1">{body}</Typography>
 					{likeButton}
-					<span>{likeCount} Likes</span>
+					{likeCountData}
 					<ButtonTemplate tip="comments">
 						<ChatIcon color="secondary" />
 					</ButtonTemplate>
+					{commentCountData}
 				</CardContent>
 			</Card>
 		);

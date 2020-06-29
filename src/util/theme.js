@@ -67,22 +67,6 @@ export default {
 			width: '50%',
 		},
 	},
-	screamStyle: {
-		card: {
-			position: 'relative',
-			display: 'flex',
-			marginBottom: 20,
-			background: 'rgba(0,0,0, 0.3)',
-			color: '#959b9b',
-		},
-		image: {
-			minWidth: 150,
-		},
-		content: {
-			padding: 25,
-			objectFit: 'cover',
-		},
-	},
 	profile: {
 		paper: {
 			padding: 20,
