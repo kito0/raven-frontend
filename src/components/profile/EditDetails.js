@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-import ButtonTemplate from '../util/ButtonTemplate';
+import ButtonTemplate from '../../util/ButtonTemplate';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -12,7 +12,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import EditIcon from '@material-ui/icons/Edit';
 
 import { connect } from 'react-redux';
-import { editUserDetails } from '../redux/actions/userActions';
+import { editUserDetails } from '../../redux/actions/userActions';
 
 const styles = (theme) => ({
 	button: {
@@ -23,6 +23,9 @@ const styles = (theme) => ({
 	},
 	input: {
 		color: '#959b9b',
+	},
+	inputLabel: {
+		color: '#5e3333',
 	},
 });
 
@@ -89,12 +92,12 @@ class EditDetails extends Component {
 					className={classes.EditDetails}
 					PaperProps={{
 						style: {
-							backgroundColor: 'rgba(0,0,0, 0.1)',
+							backgroundColor: 'rgba(0,0,0, 0.7)',
 							boxShadow: '5px 10px 18px',
 						},
 					}}
 				>
-					<DialogTitle style={{ color: '#b0b0b0' }}>
+					<DialogTitle style={{ color: '#5e3333' }}>
 						Edit your details
 					</DialogTitle>
 					<DialogContent>
@@ -115,7 +118,7 @@ class EditDetails extends Component {
 									className: classes.input,
 								}}
 								InputLabelProps={{
-									className: classes.input,
+									className: classes.inputLabel,
 								}}
 							/>
 							<TextField
@@ -123,7 +126,6 @@ class EditDetails extends Component {
 								type="text"
 								label="website"
 								placeholder="your personal professional website"
-								className={classes.textField}
 								value={this.state.website}
 								onChange={this.handleChange}
 								fullWidth
@@ -133,7 +135,7 @@ class EditDetails extends Component {
 									className: classes.input,
 								}}
 								InputLabelProps={{
-									className: classes.input,
+									className: classes.inputLabel,
 								}}
 							/>
 							<TextField
@@ -141,7 +143,6 @@ class EditDetails extends Component {
 								type="text"
 								label="location"
 								placeholder="where you live"
-								className={classes.textField}
 								value={this.state.location}
 								onChange={this.handleChange}
 								fullWidth
@@ -151,7 +152,7 @@ class EditDetails extends Component {
 									className: classes.input,
 								}}
 								InputLabelProps={{
-									className: classes.input,
+									className: classes.inputLabel,
 								}}
 							/>
 						</form>

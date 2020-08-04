@@ -71,13 +71,13 @@ class login extends Component {
 							name="email"
 							type="email"
 							label="Email"
-							className={classes.textField}
 							helperText={errors.email}
 							error={errors.email ? true : false}
 							value={this.state.email}
 							onChange={this.handleChange}
 							fullWidth
 							InputProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									error: classes.error,
@@ -91,6 +91,7 @@ class login extends Component {
 								},
 							}}
 							InputLabelProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									asterisk: classes.asterisk,
@@ -99,12 +100,6 @@ class login extends Component {
 							}}
 							defaultValue="color"
 							className={classes.root}
-							InputProps={{
-								className: classes.input,
-							}}
-							InputLabelProps={{
-								className: classes.input,
-							}}
 						/>
 						<TextField
 							color="secondary"
@@ -112,13 +107,13 @@ class login extends Component {
 							name="password"
 							type="password"
 							label="Password"
-							className={classes.textField}
 							helperText={errors.password}
 							error={errors.password ? true : false}
 							value={this.state.password}
 							onChange={this.handleChange}
 							fullWidth
 							InputProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									error: classes.error,
@@ -132,6 +127,7 @@ class login extends Component {
 								},
 							}}
 							InputLabelProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									asterisk: classes.asterisk,
@@ -140,12 +136,6 @@ class login extends Component {
 							}}
 							defaultValue="color"
 							className={classes.root}
-							InputProps={{
-								className: classes.input,
-							}}
-							InputLabelProps={{
-								className: classes.input,
-							}}
 						/>
 						{errors.general && (
 							<Typography variant="body2" className={classes.customError}>
@@ -162,8 +152,9 @@ class login extends Component {
 							LOGIN
 							{loading && (
 								<CircularProgress
+									size={30}
+									color="secondary"
 									className={classes.progress}
-									color="primary"
 								/>
 							)}
 						</Button>

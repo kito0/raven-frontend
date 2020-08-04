@@ -64,7 +64,7 @@ export default {
 		},
 		progress: {
 			position: 'absolute',
-			width: '50%',
+			opacity: '0.5',
 		},
 	},
 	profile: {
@@ -113,6 +113,21 @@ export default {
 			'& a': {
 				margin: '10px 20px 10px 20px',
 			},
+		},
+		progress: {
+			position: 'absolute',
+			opacity: '0.5',
+		},
+	},
+	etc: {
+		visibleSeperator: {
+			width: '100%',
+			border: '1px solid rgba(94,51,51,0.5)',
+			marginBottom: 20,
+		},
+		invisibleSeperator: {
+			border: 'none',
+			margin: 4,
 		},
 	},
 };

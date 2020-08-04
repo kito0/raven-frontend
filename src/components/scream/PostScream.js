@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-import ButtonTemplate from '../util/ButtonTemplate';
+import ButtonTemplate from '../../util/ButtonTemplate';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -14,7 +14,7 @@ import AddIcon from '@material-ui/icons/Add';
 import CloseIcon from '@material-ui/icons/Close';
 
 import { connect } from 'react-redux';
-import { postScream, clearErrors } from '../redux/actions/dataActions';
+import { postScream, clearErrors } from '../../redux/actions/dataActions';
 
 const styles = (theme) => ({
 	root: {
@@ -86,7 +86,7 @@ class PostScream extends Component {
 					maxWidth="sm"
 					PaperProps={{
 						style: {
-							backgroundColor: 'rgba(0,0,0, 0.1)',
+							backgroundColor: 'rgba(0,0,0, 0.7)',
 							boxShadow: '5px 10px 18px',
 						},
 					}}
@@ -98,7 +98,7 @@ class PostScream extends Component {
 					>
 						<CloseIcon color="secondary" />
 					</ButtonTemplate>
-					<DialogTitle style={{ color: '#b0b0b0' }}>Create Post</DialogTitle>
+					<DialogTitle style={{ color: '#5e3333' }}>Create Post</DialogTitle>
 					<DialogContent>
 						<form onSubmit={this.handleSubmit}>
 							<TextField

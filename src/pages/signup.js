@@ -22,7 +22,7 @@ const styles = (theme) => ({
 		color: '#959b9b',
 	},
 	inputLabel: {
-		color: '#878c8c',
+		color: '#959b9b',
 	},
 	notchedOutline: {},
 	focused: {
@@ -87,13 +87,13 @@ class signup extends Component {
 							name="email"
 							type="email"
 							label="Email"
-							className={classes.textField}
 							helperText={errors.email}
 							error={errors.email ? true : false}
 							value={this.state.email}
 							onChange={this.handleChange}
 							fullWidth
 							InputProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									error: classes.error,
@@ -106,6 +106,7 @@ class signup extends Component {
 								},
 							}}
 							InputLabelProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									asterisk: classes.asterisk,
@@ -114,12 +115,6 @@ class signup extends Component {
 							}}
 							defaultValue="color"
 							className={classes.root}
-							InputProps={{
-								className: classes.input,
-							}}
-							InputLabelProps={{
-								className: classes.input,
-							}}
 						/>
 						<TextField
 							color="secondary"
@@ -127,13 +122,13 @@ class signup extends Component {
 							name="password"
 							type="password"
 							label="Password"
-							className={classes.textField}
 							helperText={errors.password}
 							error={errors.password ? true : false}
 							value={this.state.password}
 							onChange={this.handleChange}
 							fullWidth
 							InputProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									error: classes.error,
@@ -146,6 +141,7 @@ class signup extends Component {
 								},
 							}}
 							InputLabelProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									asterisk: classes.asterisk,
@@ -154,12 +150,6 @@ class signup extends Component {
 							}}
 							defaultValue="color"
 							className={classes.root}
-							InputProps={{
-								className: classes.input,
-							}}
-							InputLabelProps={{
-								className: classes.input,
-							}}
 						/>
 						<TextField
 							color="secondary"
@@ -167,13 +157,13 @@ class signup extends Component {
 							name="confirmPassword"
 							type="password"
 							label="Confirm Password"
-							className={classes.textField}
 							helperText={errors.confirmPassword}
 							error={errors.confirmPassword ? true : false}
 							value={this.state.confirmPassword}
 							onChange={this.handleChange}
 							fullWidth
 							InputProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									error: classes.error,
@@ -186,6 +176,7 @@ class signup extends Component {
 								},
 							}}
 							InputLabelProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									asterisk: classes.asterisk,
@@ -194,12 +185,6 @@ class signup extends Component {
 							}}
 							defaultValue="color"
 							className={classes.root}
-							InputProps={{
-								className: classes.input,
-							}}
-							InputLabelProps={{
-								className: classes.input,
-							}}
 						/>
 						<TextField
 							color="secondary"
@@ -207,13 +192,13 @@ class signup extends Component {
 							name="handle"
 							type="text"
 							label="Handle"
-							className={classes.textField}
 							helperText={errors.handle}
 							error={errors.handle ? true : false}
 							value={this.state.handle}
 							onChange={this.handleChange}
 							fullWidth
 							InputProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									error: classes.error,
@@ -226,6 +211,7 @@ class signup extends Component {
 								},
 							}}
 							InputLabelProps={{
+								className: classes.input,
 								classes: {
 									root: classes.root,
 									asterisk: classes.asterisk,
@@ -234,12 +220,6 @@ class signup extends Component {
 							}}
 							defaultValue="color"
 							className={classes.root}
-							InputProps={{
-								className: classes.input,
-							}}
-							InputLabelProps={{
-								className: classes.input,
-							}}
 						/>
 						{errors.general && (
 							<Typography variant="body2" className={classes.customError}>
@@ -256,8 +236,9 @@ class signup extends Component {
 							Signup
 							{loading && (
 								<CircularProgress
+									size={30}
+									color="secondary"
 									className={classes.progress}
-									color="primary"
 								/>
 							)}
 						</Button>

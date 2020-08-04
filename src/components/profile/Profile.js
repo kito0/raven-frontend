@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails';
-import ButtonTemplate from '../util/ButtonTemplate';
+import ButtonTemplate from '../../util/ButtonTemplate';
+import ProfileSkeleton from '../../util/ProfileSkeleton';
 
 import { connect } from 'react-redux';
-import { logoutUser, uploadImage } from '../redux/actions/userActions';
+import { logoutUser, uploadImage } from '../../redux/actions/userActions';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
-import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
@@ -78,14 +77,6 @@ class Profile extends Component {
 							<Typography variant="h5" component={Link} to={`/users/${handle}`}>
 								@{handle}
 							</Typography>
-							{/* <MuiLink
-								component={Link}
-								to={`/users/${handle}`}
-								color="secondary"
-								variant="h5"
-							>
-								@{handle}
-							</MuiLink> */}
 							<p />
 							{bio && <Typography variant="body2">{bio}</Typography>}
 							<p />
@@ -145,9 +136,7 @@ class Profile extends Component {
 				</Paper>
 			)
 		) : (
-			<p>
-				<CircularProgress color="primary" />
-			</p>
+			<ProfileSkeleton />
 		);
 
 		return profileMarkup;
