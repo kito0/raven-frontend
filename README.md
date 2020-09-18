@@ -1,7 +1,7 @@
 ## Raven
 
-A dark themed twitter-esque social media platform. 
-Link - https://raven-social.web.app/
+A dark themed twitter-esque social media platform. <br />
+https://raven-social.web.app/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
